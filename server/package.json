@@ -1,0 +1,27 @@
+{
+    "name": "backend",
+    "version": "1.0.0",
+    "description": "MEAN Stack CRUD App Backend",
+    "main": "server.js",
+    "scripts": {
+        "test": "test",
+        "start": "node index.js",
+        "build": "npm install",
+        "nodemon": "nodemon server.js"
+    },
+    "keywords": [
+        "CRUD_Backend"
+    ],
+    "author": "Arnab Roy Chowdhury",
+    "license": "ISC",
+    "dependencies": {
+        "body-parser": "^1.20.2",
+        "cors": "^2.8.5",
+        "createerror": "^1.3.0",
+        "express": "^4.18.2",
+        "mongoose": "^8.1.1"
+    },
+    "devDependencies": {
+        "nodemon": "^3.0.3"
+    }
+}
