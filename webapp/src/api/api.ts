@@ -29,8 +29,8 @@ export const searchAllApiRequest = async (body: string = '', callback?: Function
         })
 };
 
-export const userSearchApiRequest = async (body: string = '', callback?: Function, loading?: Function) => {
-    await fetch(`http://localhost:4100/searchify/getAll`, {
+export const userSearchApiRequest = async (body: any, callback?: Function, loading?: Function) => {
+    await fetch(`http://localhost:4100/searchify/getByTitle`, {
         method: 'POST',
         headers: {
             'Accept': 'application/json',

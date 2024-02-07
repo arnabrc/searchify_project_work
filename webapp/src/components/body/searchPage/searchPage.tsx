@@ -23,10 +23,8 @@ const SearchPage = (props: SearchPageProps) => {
 
     useEffect(() => {
         const searchData = async () => {
-            let res: any = await getUserSearch(searchStr, items)
-            console.log("Result ", res);
-            setLocalItems(res)
-            console.log(`items: `, items);
+            let res: any = await getUserSearch(searchStr, items);
+            setLocalItems(res);
         }
         setTimeout(() => {
             searchData()
@@ -34,8 +32,6 @@ const SearchPage = (props: SearchPageProps) => {
     }, [searchStr])
 
     const handleOnSearch = (string: any, results: any) => {
-        console.log(string, results)
-
         setSearchStr(string)
     }
 
@@ -43,14 +39,13 @@ const SearchPage = (props: SearchPageProps) => {
     const handleOnSelect = (item: any) => {
         // the item selected
         // navigate(`/result/${item.name}`)
-        getSearchifyDetail?.(item.title);
+        getSearchifyDetail?.(item.name);
     }
 
     const formatResult = (item: any) => {
-        console.log(`formatResult `, item)
         return (
             <>
-                <span style={{ display: 'block', textAlign: 'left' }}>Title: {item.title}</span>
+                <span style={{ display: 'block', textAlign: 'left' }}>{item.name}</span>
             </>
         )
     }

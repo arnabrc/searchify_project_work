@@ -4,7 +4,9 @@ import ResultPage from './resultPage';
 import { RootState } from '../../reducers/reducers';
 
 const mapStateToProps = (state: RootState, ownProps: any) => {
-    return {};
+    return {
+    searchifyDetails: state.searchifyDetailsReducer.items
+    };
 };
 
 const mapDispatchToProps = (dispatch: any) => {

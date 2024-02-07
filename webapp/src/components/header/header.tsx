@@ -17,13 +17,13 @@ const Header = (props: HeaderProps) => {
             </button>
             <div className="collapse navbar-collapse header-div" id="navbarNav">
                 <ul className="navbar-nav ms-auto header-ul">
-                    <li className="nav-item active">
+                    <li className="nav-item active mx-3 my-3">
                         <Link className="nav-link" to="" >{'Home'}</Link>
                     </li>
-                    <li className="nav-item active">
+                    <li className="nav-item active mx-3 my-3">
                         <i className="fa-sharp fa-regular fa-bell fa-xl"></i>
                     </li>
-                    <li className="nav-item active">
+                    <li className="nav-item active mx-3 my-3">
                         <img src="https://cdn.iconscout.com/icon/free/png-256/free-avatar-370-456322.png?f=webp" alt="avatar" height="30px" className="rounded-circle" />
                     </li>
                 </ul>

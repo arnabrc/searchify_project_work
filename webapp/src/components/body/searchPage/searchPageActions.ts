@@ -45,7 +45,7 @@ export const getSearchifyDetail = (input: string) => {
     return async (dispatch: Function, getState: Function) => {
         dispatch(setLoading(true));
         await userSearchApiRequest(
-            input,
+            JSON.stringify({'name': input}),
             (jsonData: any) => {
                 dispatch(setUserSearch(jsonData))
             },
@@ -54,4 +54,14 @@ export const getSearchifyDetail = (input: string) => {
             }
         )
     };
+};
+
+export const getUserSearchResult = async () => {
+    try {
+        let res = await fetch(`https://jsonplaceholder.typicode.com/photos`);
+        let finalRes = await res.json();
+        return finalRes;
+    } catch (error) {
+        return error;
+    }
 };

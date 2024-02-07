@@ -17,7 +17,7 @@ const MainComponent = (props: MainComponentProps) => {
     useEffect(() => {
         searchAllSearchifyDetails();
     }, []);
-    console.log(`MainComponent `, loading, userSearch);
+
     return (
         <>
             <Header />
@@ -32,7 +32,6 @@ const MainComponent = (props: MainComponentProps) => {
                     <>ERROR!!! NOT FOUND</>
                 )}
             </div>
-            <ResultPage />
             <Footer />
         </>
     )

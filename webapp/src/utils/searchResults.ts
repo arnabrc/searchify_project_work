@@ -1,6 +1,6 @@
 const searchApiData = (searchStr = '', results: any) => {
     return new Promise((resolve,reject) => {
-        let result = results.filter((r: any) => r.title.toLowerCase().includes(searchStr.toLocaleLowerCase()));
+        let result = results?.filter((r: any) => r.name.toLowerCase().includes(searchStr.toLocaleLowerCase()));
         resolve(result)
     })
 }
