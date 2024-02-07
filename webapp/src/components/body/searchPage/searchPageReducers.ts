@@ -15,13 +15,11 @@ const searchifyDetailsReducer = (
 ): ISearchifyDetailsReducerState => {
     switch (action.type) {
         case SET_SEARCHIFY_DETAILS:
-            console.log(`3 `, action.response)
             return {
                 ...state,
                 titles: action.response
             };
         case SET_LOADING:
-            console.log(`4 `, action.response)
             return {
                 ...state,
                 loading: action.response

@@ -13,7 +13,6 @@ const MainComponent = (props: MainComponentProps) => {
     const { loading, searchAllSearchifyDetails } = props;
 
     useEffect(() => {
-        console.log(`useEffect`,)
         searchAllSearchifyDetails();
     }, []);
 

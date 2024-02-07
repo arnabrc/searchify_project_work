@@ -1,4 +1,4 @@
-export const searchAllApiRequest = async (body: string = '', callback?: Function, loading?: Function): Promise<void> => {
+export const searchAllApiRequest = async (body: string = '', callback?: Function, loading?: Function) => {
     await fetch(`http://localhost:4100/searchify/getAll`, {
         method: 'POST',
         headers: {
