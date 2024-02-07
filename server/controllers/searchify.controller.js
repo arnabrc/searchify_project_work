@@ -45,7 +45,7 @@ exports.searchify_detail = async (req, res, next) => {
             {
                 $match: {
                     $text: {
-                        $search: req.body.title
+                        $search: req.body.name
                     }
                 }
             },
