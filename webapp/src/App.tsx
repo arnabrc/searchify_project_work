@@ -5,6 +5,7 @@ import './App.scss';
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 
 import Main from './components/mainComponent/mainComponentContainer';
+import ResultPage from './components/body/resultPage/resultPageContainer';
 
 export const App = () => {
   return (

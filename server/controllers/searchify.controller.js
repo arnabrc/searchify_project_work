@@ -51,7 +51,8 @@ exports.searchify_detail = async (req, res, next) => {
             },
             {
                 $project: {
-                    title: 1,
+                    id: 1,
+                    name: 1,
                     description: 1,
                     _id: 0
                 }

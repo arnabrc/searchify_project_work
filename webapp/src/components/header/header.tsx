@@ -8,10 +8,6 @@ interface HeaderProps {
 
 };
 
-const handleClick = () => {
-
-}
-
 const Header = (props: HeaderProps) => {
     return (
         <nav className="navbar navbar-expand-lg navbar-dark bg-primary px-4 navbar-class">
@@ -19,8 +15,8 @@ const Header = (props: HeaderProps) => {
             <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"></span>
             </button>
-            <div className="collapse navbar-collapse" id="navbarNav">
-                <ul className="navbar-nav  ms-auto">
+            <div className="collapse navbar-collapse header-div" id="navbarNav">
+                <ul className="navbar-nav ms-auto header-ul">
                     <li className="nav-item active">
                         <Link className="nav-link" to="" >{'Home'}</Link>
                     </li>

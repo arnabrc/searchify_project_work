@@ -2,16 +2,17 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import SearchPage from './searchPage';
 import { RootState } from '../../reducers/reducers';
+import { getSearchifyDetail } from './searchPageActions';
 
 const mapStateToProps = (state: RootState, ownProps: any) => {
     return {
-        titles: state.searchifyDetailsReducer.titles
+        items: state.searchifyDetailsReducer.items
     };
 };
 
 const mapDispatchToProps = (dispatch: any) => {
     return {
-        ...bindActionCreators({}, dispatch)
+        ...bindActionCreators({getSearchifyDetail}, dispatch)
     };
 };
 

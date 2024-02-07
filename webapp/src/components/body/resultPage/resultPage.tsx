@@ -6,7 +6,7 @@ interface ResultPageProps {
 
 const ResultPage = (props: ResultPageProps) => {
     return (
-        <></>
+        <>{'Result Page'}</>
     )
 };
 

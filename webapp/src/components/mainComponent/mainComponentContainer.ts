@@ -6,7 +6,8 @@ import { searchAllSearchifyDetails } from '../body/searchPage/searchPageActions'
 
 const mapStateToProps = (state: RootState, ownProps: any) => {
     return {
-        loading: state.searchifyDetailsReducer.loading
+        loading: state.searchifyDetailsReducer.loading,
+        userSearch: state.searchifyDetailsReducer.userSearch
     };
 };
 

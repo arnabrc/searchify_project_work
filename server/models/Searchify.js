@@ -3,7 +3,10 @@ const Schema = mongoose.Schema;
 
 // Define collection and schema
 let SearchifyData = new Schema({
-    title: {
+    id: {
+        type: Number
+    },
+    name: {
         type: String
     },
     description: {

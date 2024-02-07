@@ -1,28 +1,32 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ReactSearchAutocomplete } from 'react-search-autocomplete';
+import { ISearchifyDetail } from '../../../interfaces/ISearchifyDetail';
 import { getUserSearch } from '../../../utils/searchResults';
+import { Typeahead } from 'react-bootstrap-typeahead';
 
 import './searchPage.scss';
 
 interface SearchPageProps {
-    titles?: any[];
+    items?: ISearchifyDetail[];
+    getSearchifyDetail?: Function;
 };
 
 const SearchPage = (props: SearchPageProps) => {
 
-    const {titles} = props;
+    const {items, getSearchifyDetail} = props;
 
-    const [items, setItems] = useState([]);
+    const [localItems, setLocalItems] = useState([]);
     const [searchStr, setSearchStr] = useState('');
     
     const navigate = useNavigate();
 
     useEffect(() => {
         const searchData = async () => {
-            let res: any = await getUserSearch(searchStr, titles)
+            let res: any = await getUserSearch(searchStr, items)
             console.log("Result ", res);
-            setItems(res)
+            setLocalItems(res)
+            console.log(`items: `, items);
         }
         setTimeout(() => {
             searchData()
@@ -38,23 +42,24 @@ const SearchPage = (props: SearchPageProps) => {
 
     const handleOnSelect = (item: any) => {
         // the item selected
-        navigate(`/result/${item.name}`)
+        // navigate(`/result/${item.name}`)
+        getSearchifyDetail?.(item.title);
     }
 
     const formatResult = (item: any) => {
         console.log(`formatResult `, item)
         return (
             <>
-                <span style={{ display: 'block', textAlign: 'left' }}>{item.title}</span>
+                <span style={{ display: 'block', textAlign: 'left' }}>Title: {item.title}</span>
             </>
         )
     }
 
     return (
-        <div className='center searchPage'>
+        <div className='center search-page'>
             <div className='search-width'>
                 <ReactSearchAutocomplete
-                    items={items}
+                    items={localItems}
                     onSearch={handleOnSearch}
                     onSelect={handleOnSelect}
                     autoFocus
